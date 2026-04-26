@@ -15,7 +15,7 @@ export default {
         },
       },
       fontFamily: {
-        serif: ['"Instrument Serif"', 'serif'],
+        sans: ['Inter', 'sans-serif'],
       },
     },
   },

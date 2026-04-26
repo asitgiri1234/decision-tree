@@ -26,7 +26,7 @@ export default function QuestionNode({ node, onAnswer }) {
     >
       <motion.h2
         variants={itemVariants}
-        className="text-xl font-medium text-slate-100 mb-8 leading-relaxed"
+        className="text-xl font-medium text-slate-800 dark:text-slate-100 mb-8 leading-relaxed"
       >
         {node.text}
       </motion.h2>
@@ -36,12 +36,12 @@ export default function QuestionNode({ node, onAnswer }) {
           <motion.button
             key={index}
             variants={itemVariants}
-            whileHover={{ scale: 1.02, backgroundColor: 'rgba(45, 55, 72, 1)' }}
+            whileHover={{ scale: 1.02 }}
             whileTap={{ scale: 0.98 }}
             onClick={() => onAnswer(index)}
-            className="w-full px-5 py-4 bg-slate-800/80 hover:bg-slate-800 border border-slate-700/50 rounded-xl text-left text-slate-200 transition-colors"
+            className="w-full px-5 py-4 bg-white dark:bg-slate-800/80 hover:bg-slate-100 dark:hover:bg-slate-800 border border-slate-200 dark:border-slate-700/50 rounded-xl text-left text-slate-700 dark:text-slate-200 transition-colors"
           >
-            <span className="inline-block w-6 h-6 rounded-full bg-slate-700 text-xs text-slate-400 font-medium text-center leading-6 mr-3">
+            <span className="inline-block w-6 h-6 rounded-full bg-slate-200 dark:bg-slate-700 text-xs text-slate-500 dark:text-slate-400 font-medium text-center leading-6 mr-3">
               {String.fromCharCode(65 + index)}
             </span>
             {option}

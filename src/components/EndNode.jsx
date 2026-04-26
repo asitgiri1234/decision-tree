@@ -12,7 +12,7 @@ export default function EndNode({ node, onRestart }) {
     >
       <div className="w-16 h-16 rounded-full bg-teal-500/10 flex items-center justify-center">
         <svg
-          className="w-8 h-8 text-teal-400"
+          className="w-8 h-8 text-teal-600 dark:text-teal-400"
           fill="none"
           stroke="currentColor"
           viewBox="0 0 24 24"
@@ -26,13 +26,13 @@ export default function EndNode({ node, onRestart }) {
         </svg>
       </div>
 
-      <h1 className="text-2xl font-light text-slate-100">{node.text}</h1>
+      <h1 className="text-2xl font-light text-slate-800 dark:text-slate-100">{node.text}</h1>
 
       <motion.button
         whileHover={{ scale: 1.03 }}
         whileTap={{ scale: 0.97 }}
         onClick={onRestart}
-        className="px-8 py-3 bg-slate-800 hover:bg-slate-700 border border-slate-700 text-slate-200 font-medium rounded-lg transition-colors"
+        className="px-8 py-3 bg-white hover:bg-slate-100 dark:bg-slate-800 dark:hover:bg-slate-700 border border-slate-200 dark:border-slate-700 text-slate-700 dark:text-slate-200 font-medium rounded-lg transition-colors"
       >
         Reflect Again
       </motion.button>

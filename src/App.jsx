@@ -17,15 +17,25 @@ import ReflectionNode from './components/ReflectionNode';
 import BridgeNode from './components/BridgeNode';
 import SummaryNode from './components/SummaryNode';
 import EndNode from './components/EndNode';
+import ThemeToggle from './components/ThemeToggle';
 
 export default function App() {
   const [currentNodeId, setCurrentNodeId] = useState('START');
   const [answers, setAnswers] = useState({});
   const [signals, setSignals] = useState(() => createEmptySignals());
   const [summaryText, setSummaryText] = useState('');
+  const [isDark, setIsDark] = useState(true);
 
   const currentNode = getNode(currentNodeId);
   const currentAxis = getCurrentAxis(currentNodeId);
+
+  useEffect(() => {
+    if (isDark) {
+      document.documentElement.classList.add('dark');
+    } else {
+      document.documentElement.classList.remove('dark');
+    }
+  }, [isDark]);
 
   // Auto-evaluate decision nodes and auto-advance from bridge nodes
   useEffect(() => {
@@ -112,14 +122,16 @@ export default function App() {
 
   if (!currentNode) {
     return (
-      <div className="min-h-screen flex items-center justify-center text-slate-400">
+      <div className="min-h-screen flex items-center justify-center text-slate-500 dark:text-slate-400">
         Something went wrong. Node not found.
       </div>
     );
   }
 
   return (
-    <div className="min-h-screen flex flex-col items-center justify-center px-4 py-12 bg-slate-950">
+    <div className="min-h-screen flex flex-col items-center justify-center px-4 py-12 bg-slate-50 dark:bg-slate-950 transition-colors duration-500">
+      <ThemeToggle isDark={isDark} onToggle={() => setIsDark((d) => !d)} />
+
       <div className="w-full max-w-2xl">
         {currentNode.type !== 'start' && currentNode.type !== 'end' && (
           <ProgressBar currentAxis={currentAxis} />

@@ -12,7 +12,7 @@ export default function StartNode({ node, onBegin }) {
     >
       <div className="w-16 h-16 rounded-full bg-teal-500/10 flex items-center justify-center">
         <svg
-          className="w-8 h-8 text-teal-400"
+          className="w-8 h-8 text-teal-600 dark:text-teal-400"
           fill="none"
           stroke="currentColor"
           viewBox="0 0 24 24"
@@ -26,11 +26,11 @@ export default function StartNode({ node, onBegin }) {
         </svg>
       </div>
 
-      <h1 className="text-3xl font-light text-slate-100 leading-snug max-w-sm">
+      <h1 className="text-3xl font-light text-slate-800 dark:text-slate-100 leading-snug max-w-sm">
         {node.text}
       </h1>
 
-      <p className="text-slate-400 text-sm max-w-xs">
+      <p className="text-slate-500 dark:text-slate-400 text-sm max-w-xs">
         A short reflection to help you process your day and prepare for tomorrow.
       </p>
 
@@ -38,7 +38,7 @@ export default function StartNode({ node, onBegin }) {
         whileHover={{ scale: 1.03 }}
         whileTap={{ scale: 0.97 }}
         onClick={onBegin}
-        className="px-8 py-3 bg-teal-500 hover:bg-teal-400 text-slate-950 font-semibold rounded-lg transition-colors"
+        className="px-8 py-3 bg-teal-600 hover:bg-teal-500 dark:bg-teal-500 dark:hover:bg-teal-400 text-white dark:text-slate-950 font-semibold rounded-lg transition-colors"
       >
         Begin Reflection
       </motion.button>

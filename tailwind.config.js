@@ -1,5 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 export default {
+  darkMode: 'class',
   content: [
     "./index.html",
     "./src/**/*.{js,ts,jsx,tsx}",
@@ -12,6 +13,9 @@ export default {
           900: '#0f172a',
           950: '#020617',
         },
+      },
+      fontFamily: {
+        serif: ['"Instrument Serif"', 'serif'],
       },
     },
   },

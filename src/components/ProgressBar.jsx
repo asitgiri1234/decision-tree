@@ -16,7 +16,7 @@ export default function ProgressBar({ currentAxis }) {
           <div key={num} className="flex flex-col items-center">
             <span
               className={`text-xs font-medium uppercase tracking-wider ${
-                num <= currentAxis ? 'text-teal-400' : 'text-slate-500'
+                num <= currentAxis ? 'text-teal-600 dark:text-teal-400' : 'text-slate-400 dark:text-slate-500'
               }`}
             >
               {label}
@@ -24,7 +24,7 @@ export default function ProgressBar({ currentAxis }) {
           </div>
         ))}
       </div>
-      <div className="h-1.5 bg-slate-800 rounded-full overflow-hidden">
+      <div className="h-1.5 bg-slate-200 dark:bg-slate-800 rounded-full overflow-hidden">
         <motion.div
           className="h-full bg-teal-500 rounded-full"
           initial={{ width: 0 }}

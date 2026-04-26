@@ -12,7 +12,7 @@ export default function BridgeNode({ node }) {
     >
       <div className="w-12 h-12 rounded-full bg-teal-500/10 flex items-center justify-center mb-6">
         <svg
-          className="w-6 h-6 text-teal-400"
+          className="w-6 h-6 text-teal-600 dark:text-teal-400"
           fill="none"
           stroke="currentColor"
           viewBox="0 0 24 24"
@@ -26,7 +26,7 @@ export default function BridgeNode({ node }) {
         </svg>
       </div>
 
-      <h2 className="text-xl font-medium text-slate-200">{node.text}</h2>
+      <h2 className="text-xl font-medium text-slate-700 dark:text-slate-200">{node.text}</h2>
     </motion.div>
   );
 }

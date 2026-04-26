@@ -12,7 +12,7 @@ export default function ReflectionNode({ node, onContinue }) {
     >
       <div className="w-14 h-14 rounded-full bg-indigo-500/10 flex items-center justify-center mb-6">
         <svg
-          className="w-7 h-7 text-indigo-400"
+          className="w-7 h-7 text-indigo-600 dark:text-indigo-400"
           fill="none"
           stroke="currentColor"
           viewBox="0 0 24 24"
@@ -26,8 +26,8 @@ export default function ReflectionNode({ node, onContinue }) {
         </svg>
       </div>
 
-      <div className="bg-indigo-500/5 border border-indigo-500/20 rounded-2xl px-8 py-8 mb-8">
-        <p className="text-lg text-indigo-100 font-light leading-relaxed">
+      <div className="bg-indigo-50 dark:bg-indigo-500/5 border border-indigo-200 dark:border-indigo-500/20 rounded-2xl px-8 py-8 mb-8">
+        <p className="text-lg text-indigo-900 dark:text-indigo-100 font-light leading-relaxed">
           {node.text}
         </p>
       </div>
@@ -36,7 +36,7 @@ export default function ReflectionNode({ node, onContinue }) {
         whileHover={{ scale: 1.03 }}
         whileTap={{ scale: 0.97 }}
         onClick={onContinue}
-        className="px-8 py-3 bg-indigo-500 hover:bg-indigo-400 text-white font-medium rounded-lg transition-colors"
+        className="px-8 py-3 bg-indigo-600 hover:bg-indigo-500 dark:bg-indigo-500 dark:hover:bg-indigo-400 text-white font-medium rounded-lg transition-colors"
       >
         Continue
       </motion.button>

@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
 
-export default function StartNode({ node, onBegin }) {
+export default function StartNode({ node, onBegin, children }) {
   return (
     <motion.div
       key={node.id}
@@ -8,7 +8,7 @@ export default function StartNode({ node, onBegin }) {
       animate={{ opacity: 1, y: 0 }}
       exit={{ opacity: 0, y: -20 }}
       transition={{ duration: 0.5 }}
-      className="flex flex-col items-center text-center space-y-8"
+      className="flex flex-col items-center text-center space-y-6"
     >
       <div className="w-16 h-16 rounded-full bg-teal-500/10 flex items-center justify-center">
         <svg
@@ -42,6 +42,8 @@ export default function StartNode({ node, onBegin }) {
       >
         Begin Reflection
       </motion.button>
+
+      {children}
     </motion.div>
   );
 }

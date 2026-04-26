@@ -1,0 +1,155 @@
+{
+  "name": "Relationships",
+  "nodes": [
+    { "id": "START", "type": "start", "text": "Let's reflect on your relationships today." },
+
+    { "id": "A1_Q1", "type": "question", "text": "How did you feel in your closest relationship today?", "options": ["Connected", "Neutral", "Distant", "Tense"] },
+
+    {
+      "id": "A1_D1",
+      "type": "decision",
+      "rules": [
+        { "if": ["Connected", "Neutral"], "goTo": "A1_Q2_POS" },
+        { "if": ["Distant", "Tense"], "goTo": "A1_Q2_NEG" }
+      ]
+    },
+
+    {
+      "id": "A1_Q2_POS",
+      "type": "question",
+      "text": "What made you feel close today?",
+      "options": [
+        "I initiated contact",
+        "They reached out to me",
+        "We shared a moment",
+        "I was simply present"
+      ],
+      "signal": ["axis1:internal", "axis1:external", "axis1:internal", "axis1:external"]
+    },
+
+    {
+      "id": "A1_Q2_NEG",
+      "type": "question",
+      "text": "When tension rose, what did you do?",
+      "options": [
+        "Tried to understand",
+        "Withdrew",
+        "Reacted defensively",
+        "Waited for them to fix it"
+      ],
+      "signal": ["axis1:internal", "axis1:external", "axis1:internal", "axis1:external"]
+    },
+
+    {
+      "id": "A1_Q3",
+      "type": "question",
+      "text": "Did you say what you truly felt today?",
+      "options": [
+        "Yes, openly",
+        "Partially",
+        "No, I held back",
+        "No, it didn't feel safe"
+      ],
+      "signal": ["axis1:internal", "axis1:internal", "axis1:external", "axis1:external"]
+    },
+
+    { "id": "A1_REF_INT", "type": "reflection", "text": "You took ownership in your relationships today. That courage builds trust over time." },
+    { "id": "A1_REF_EXT", "type": "reflection", "text": "Relationships felt reactive today. Small steps toward honest expression can shift the pattern." },
+
+    { "id": "BRIDGE_1_2", "type": "bridge", "text": "Now let's look at how you gave in your relationships." },
+
+    {
+      "id": "A2_Q1",
+      "type": "question",
+      "text": "How did you show care today?",
+      "options": [
+        "Listened without interrupting",
+        "Did a favor",
+        "Expected them to know my needs",
+        "Gave them space"
+      ],
+      "signal": ["axis2:contribution", "axis2:contribution", "axis2:entitlement", "axis2:neutral"]
+    },
+
+    {
+      "id": "A2_Q2",
+      "type": "question",
+      "text": "When something bothered you, how did you handle it?",
+      "options": [
+        "Brought it up gently",
+        "Let it go",
+        "Hinted indirectly",
+        "Expected them to notice"
+      ],
+      "signal": ["axis2:contribution", "axis2:neutral", "axis2:entitlement", "axis2:entitlement"]
+    },
+
+    {
+      "id": "A2_Q3",
+      "type": "question",
+      "text": "Did you celebrate or appreciate someone today?",
+      "options": [
+        "Yes, specifically",
+        "In my head only",
+        "No, they didn't earn it",
+        "I forgot"
+      ],
+      "signal": ["axis2:contribution", "axis2:neutral", "axis2:entitlement", "axis2:neutral"]
+    },
+
+    { "id": "A2_REF_CON", "type": "reflection", "text": "You gave to your relationships today. Contribution is the foundation of deep connection." },
+    { "id": "A2_REF_ENT", "type": "reflection", "text": "Expectations showed up today. Noticing them is the first step toward cleaner communication." },
+
+    { "id": "BRIDGE_2_3", "type": "bridge", "text": "Now let's widen your view beyond individual relationships." },
+
+    {
+      "id": "A3_Q1",
+      "type": "question",
+      "text": "When you thought about your community today, who came to mind?",
+      "options": [
+        "Only close friends",
+        "Family",
+        "Colleagues or neighbors",
+        "People I don't know well"
+      ],
+      "signal": ["axis3:self", "axis3:team", "axis3:other", "axis3:wide"]
+    },
+
+    {
+      "id": "A3_Q2",
+      "type": "question",
+      "text": "Did you consider anyone outside your immediate circle today?",
+      "options": [
+        "Not really",
+        "Briefly",
+        "I thought about someone specific",
+        "I took action for someone else"
+      ],
+      "signal": ["axis3:self", "axis3:neutral", "axis3:other", "axis3:wide"]
+    },
+
+    {
+      "id": "A3_Q3",
+      "type": "question",
+      "text": "What kind of impact do you want your relationships to have?",
+      "options": [
+        "Support my growth",
+        "Bring joy to my life",
+        "Help others feel seen",
+        "Create positive change around me"
+      ],
+      "signal": ["axis3:self", "axis3:team", "axis3:other", "axis3:wide"]
+    },
+
+    { "id": "A3_REF_SELF", "type": "reflection", "text": "Your focus was on your inner circle today. That's natural — and there's a wider web waiting." },
+    { "id": "A3_REF_WIDE", "type": "reflection", "text": "You showed care beyond your immediate circle. That's where ripples become waves." },
+
+    {
+      "id": "SUMMARY",
+      "type": "summary",
+      "text": "Today in relationships you showed {axis1.dominant} ownership, leaned {axis2.dominant} in giving, and had a {axis3.dominant} sense of community. What's one small gesture you can make tomorrow?"
+    },
+
+    { "id": "END", "type": "end", "text": "Well done. Relationships grow one reflection at a time." }
+  ]
+}

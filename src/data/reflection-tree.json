@@ -1,0 +1,154 @@
+{
+  "nodes": [
+    { "id": "START", "type": "start", "text": "Good evening. Let's reflect on your day." },
+
+    { "id": "A1_Q1", "type": "question", "text": "How would you describe your day overall?", "options": ["Productive", "Balanced", "Stressful", "Frustrating"] },
+
+    {
+      "id": "A1_D1",
+      "type": "decision",
+      "rules": [
+        { "if": ["Productive", "Balanced"], "goTo": "A1_Q2_HIGH" },
+        { "if": ["Stressful", "Frustrating"], "goTo": "A1_Q2_LOW" }
+      ]
+    },
+
+    {
+      "id": "A1_Q2_HIGH",
+      "type": "question",
+      "text": "When things went well today, why do you think that happened?",
+      "options": [
+        "I planned and executed well",
+        "I adapted when needed",
+        "My team supported me",
+        "Things just worked out"
+      ],
+      "signal": ["axis1:internal", "axis1:internal", "axis1:external", "axis1:external"]
+    },
+
+    {
+      "id": "A1_Q2_LOW",
+      "type": "question",
+      "text": "When things went wrong, what was your first instinct?",
+      "options": [
+        "Look for what I could control",
+        "Wait for others to fix it",
+        "Push through alone",
+        "Feel stuck"
+      ],
+      "signal": ["axis1:internal", "axis1:external", "axis1:internal", "axis1:external"]
+    },
+
+    {
+      "id": "A1_Q3",
+      "type": "question",
+      "text": "During a difficult moment, what did you focus on?",
+      "options": [
+        "Finding solutions",
+        "Blaming circumstances",
+        "Adjusting my approach",
+        "Avoiding the issue"
+      ],
+      "signal": ["axis1:internal", "axis1:external", "axis1:internal", "axis1:external"]
+    },
+
+    { "id": "A1_REF_INT", "type": "reflection", "text": "You showed ownership today. Even when things weren't perfect, you stayed in control of your actions." },
+    { "id": "A1_REF_EXT", "type": "reflection", "text": "Today felt shaped by external factors. But even in tough situations, small choices were yours." },
+
+    { "id": "BRIDGE_1_2", "type": "bridge", "text": "Now let's look at what you gave today." },
+
+    {
+      "id": "A2_Q1",
+      "type": "question",
+      "text": "Which best describes your interactions today?",
+      "options": [
+        "I helped someone",
+        "I did my work only",
+        "I expected more from others",
+        "I went beyond my role"
+      ],
+      "signal": ["axis2:contribution", "axis2:neutral", "axis2:entitlement", "axis2:contribution"]
+    },
+
+    {
+      "id": "A2_Q2",
+      "type": "question",
+      "text": "How did you feel about recognition today?",
+      "options": [
+        "I didn't need it",
+        "I appreciated it",
+        "I deserved more",
+        "I didn't think about it"
+      ],
+      "signal": ["axis2:contribution", "axis2:neutral", "axis2:entitlement", "axis2:neutral"]
+    },
+
+    {
+      "id": "A2_Q3",
+      "type": "question",
+      "text": "Did you do anything extra today?",
+      "options": [
+        "Yes, without being asked",
+        "Only what was required",
+        "No, I was already doing enough",
+        "I wanted to but didn't"
+      ],
+      "signal": ["axis2:contribution", "axis2:neutral", "axis2:entitlement", "axis2:neutral"]
+    },
+
+    { "id": "A2_REF_CON", "type": "reflection", "text": "You leaned toward contribution. That's where long-term growth and trust come from." },
+    { "id": "A2_REF_ENT", "type": "reflection", "text": "Some expectations stood out today. Noticing them is the first step toward shifting focus to contribution." },
+
+    { "id": "BRIDGE_2_3", "type": "bridge", "text": "Now let's expand your perspective beyond yourself." },
+
+    {
+      "id": "A3_Q1",
+      "type": "question",
+      "text": "When thinking about your biggest challenge today, who comes to mind?",
+      "options": [
+        "Only me",
+        "My team",
+        "A colleague",
+        "The end user"
+      ],
+      "signal": ["axis3:self", "axis3:team", "axis3:other", "axis3:wide"]
+    },
+
+    {
+      "id": "A3_Q2",
+      "type": "question",
+      "text": "How often did you consider others' situations today?",
+      "options": [
+        "Rarely",
+        "Sometimes",
+        "Often",
+        "Actively tried to understand them"
+      ],
+      "signal": ["axis3:self", "axis3:neutral", "axis3:other", "axis3:wide"]
+    },
+
+    {
+      "id": "A3_Q3",
+      "type": "question",
+      "text": "What motivated your actions today?",
+      "options": [
+        "My goals",
+        "Team success",
+        "Helping someone",
+        "Solving a bigger problem"
+      ],
+      "signal": ["axis3:self", "axis3:team", "axis3:other", "axis3:wide"]
+    },
+
+    { "id": "A3_REF_SELF", "type": "reflection", "text": "Your focus was inward today. That's natural—but expanding your view can bring deeper meaning." },
+    { "id": "A3_REF_WIDE", "type": "reflection", "text": "You showed awareness beyond yourself. That's where real impact and fulfillment come from." },
+
+    {
+      "id": "SUMMARY",
+      "type": "summary",
+      "text": "Today you showed {axis1.dominant} control, leaned {axis2.dominant} in contribution, and had a {axis3.dominant} perspective. Reflect on one small shift you can make tomorrow."
+    },
+
+    { "id": "END", "type": "end", "text": "Good work today. See you tomorrow." }
+  ]
+}
